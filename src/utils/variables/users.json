@@ -1,0 +1,26 @@
+[
+    {
+      "id":1,
+      "name":"Yılmaz Çakmakçı",
+      "email":"cakmakcy@gmail.com",
+      "password":"asd123056"
+    },
+    {
+      "id":2,
+      "name":"Sevcan Hazar",
+      "email":"hazarsevcan@gmail.com",
+      "password":"asd123056"
+    },
+    {
+      "id":3,
+      "name":"Yeşim Gökmen",
+      "email":"yesimgokmen24@gmail.com",
+      "password":"asd123056"
+    },
+    {
+      "id":4,
+      "name":"Cemile Ekici",
+      "email":"cemilekici258@gmail.com",
+      "password":"asd123056"
+    }
+]

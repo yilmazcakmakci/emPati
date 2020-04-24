@@ -1,0 +1,5 @@
+export { default as Back } from './Back'
+export { default as Home } from './Home'
+export { default as Pati } from './Pati'
+export { default as Qrcode } from './Qrcode'
+export { default as User } from './User'

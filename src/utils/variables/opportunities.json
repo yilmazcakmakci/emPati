@@ -1,0 +1,37 @@
+[
+    {
+      "id":1,
+      "title":"Dilos Dürüm 10 TL Hediye Çeki",
+      "code":"BE7DE071-91CD-49AE-AD02-08DD688DD651",
+      "price":250,
+      "img":"https://res.cloudinary.com/valkyrja/image/upload/v1587209380/odevler/dilos.jpg"
+    },
+    {
+      "id":2,
+      "title":"Storytel 1 Ay Hediye Kartı",
+      "code":"35CC7F15-3D7D-447A-A097-950F765EBBAB",
+      "price":550,
+      "img":"https://res.cloudinary.com/valkyrja/image/upload/v1587209421/odevler/storytel.jpg"
+    },
+    {
+      "id":3,
+      "title":"Faladdin Tek Seferlik Kod",
+      "code":"3F791DAE-4CB4-41BA-B39B-14A77FAF363E",
+      "price":75,
+      "img":"https://res.cloudinary.com/valkyrja/image/upload/v1587209451/odevler/faladdin.png"
+    },
+    {
+      "id":4,
+      "title":"League of Legends 400 Riot Points",
+      "code":"5B9A49BD-5553-4C4F-82AC-F0BCEC9C60F9",
+      "price":300,
+      "img":"https://res.cloudinary.com/valkyrja/image/upload/v1587209543/odevler/lol.jpg"
+    },
+    {
+      "id":5,
+      "title":"D&R Hediye Kartı (50 TL)",
+      "code":"DE2586D9-8190-4959-8523-B6E253A4964B",
+      "price":1250,
+      "img":"https://res.cloudinary.com/valkyrja/image/upload/v1587209582/odevler/dandr.jpg"
+    }
+]

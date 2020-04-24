@@ -1,0 +1,20 @@
+[
+    {
+      "id":"B5F17484-9925-4539-8EC6-41AE697A08E6",
+      "name":"4KG Kedi Maması",
+      "quality":2,
+      "weight":4
+    },
+    {
+      "id":"A2732EF5-E1FA-4E4C-BA84-EF8990E335BF",
+      "name":"2KG Köpek Maması",
+      "quality":1,
+      "weight":2
+    },
+    {
+      "id":"B277D19B-A895-4A82-88D6-D829BEC4135F",
+      "name":"500gr Yavru Kedi Maması",
+      "quality":3,
+      "weight":0.5
+    }
+]
