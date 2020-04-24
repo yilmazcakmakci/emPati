@@ -51,7 +51,7 @@ const ProfileScreen = () => {
         <TouchableOpacity style={styles.card}>
           <Text>Satın Alım Geçmişi</Text>
           <View style={styles.icon}>
-            <Back stroke='black' fill='black' />
+            <Back fill='black' />
           </View>
         </TouchableOpacity>
 

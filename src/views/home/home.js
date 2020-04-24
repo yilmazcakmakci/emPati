@@ -10,7 +10,7 @@ const img2 = 'https://res.cloudinary.com/valkyrja/image/upload/v1587209421/odevl
 function HomeScreen({ navigation : { navigate } }) {
   return (
     <View>
-      <ImageBackground source={require('../../components/icons/dog.jpg')} style={{height:325}} />
+      <ImageBackground source={require('../../components/icons/dog.jpg')} style={{flexBasis:'40%'}} />
       <CustomButton title='BESLE' style={{mt:-30,mx:60,fontSize:24,py:10}} onPress={() => navigate('QRCode')} />
 
       <View style={styles.container}>

@@ -4,8 +4,8 @@ import { ImageBackground, View, StatusBar, Alert } from 'react-native'
 import { AppContext } from '../context'
 import { getData, setData } from '../utils/functions'
 import Input from '../components/input'
-import { users } from '../utils/variables'
 import { ScrollView } from 'react-native-gesture-handler'
+import Axios from 'axios'
 
 export default function SplashScreen() {
 
@@ -29,11 +29,12 @@ export default function SplashScreen() {
         })
 
     },[])
-
+    
     const isUserExist = async (email,password) => {
-        const result = users.find(user => {
+        const result = await Axios.get('https://raw.githubusercontent.com/yilmazcakmakci/emPati/master/src/utils/variables/users.json')
+        .then(data => data.data.find(user => {
             return user.email === email && user.password === password
-        })
+        }))
         return result
     }
     

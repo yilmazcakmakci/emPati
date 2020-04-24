@@ -2,9 +2,8 @@ import React, { useRef, useContext } from 'react';
 import { StyleSheet,Dimensions } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Box from '../../components/box'
-import { qrCodes } from '../../utils/variables'
 import { AppContext } from '../../context';
-import { calcPoint } from '../../utils/functions';
+import Axios from 'axios'
 
 function QrCodeScreen({ navigation : { navigate } }) {
 
@@ -12,18 +11,31 @@ function QrCodeScreen({ navigation : { navigate } }) {
   const scanner = useRef(null)
   const onRead = (e) => {
     
-    const checkQR = data => {
-      return data.id === e.data
+    const isValidCode = async (id) => {
+      const result = await Axios.get('https://raw.githubusercontent.com/yilmazcakmakci/emPati/master/src/utils/variables/qrCodes.json')
+      .then(data => data.data.find(code => {
+          return code.id === id
+      }))
+      return result
     }
 
-    const check = qrCodes.find(checkQR)
+    // const checkQR = data => {
+    //   return data.id === e.data
+    // }
+
+    // const check = qrCodes.find(checkQR)
+
+    isValidCode(e.data)
+    .then( res => res !== undefined ? navigate('Readed', { kg : res.weight, id : res.id, title : res.name, quality : res.quality })
+    : scanner.current.reactivate())
+    .catch( err => console.log(err))
     
-    if(check === undefined) {
-      scanner.current.reactivate()
-    }
-    else {
-      navigate('Readed', { kg : check.weight, id : check.id, title : check.name, quality : check.quality })
-    }
+    // if(check === undefined) {
+    //   scanner.current.reactivate()
+    // }
+    // else {
+    //   navigate('Readed', { kg : check.weight, id : check.id, title : check.name, quality : check.quality })
+    // }
   
   }
   
