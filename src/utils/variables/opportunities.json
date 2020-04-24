@@ -33,5 +33,12 @@
       "code":"DE2586D9-8190-4959-8523-B6E253A4964B",
       "price":1250,
       "img":"https://res.cloudinary.com/valkyrja/image/upload/v1587209582/odevler/dandr.jpg"
+    },
+    {
+      "id":6,
+      "title":"Sinema Bileti",
+      "code":"BE9BB8D9-7EE2-4F25-9827-354729ACD00D",
+      "price":500,
+      "img":"https://res.cloudinary.com/valkyrja/image/upload/v1587734015/odevler/cinema.png"
     }
 ]
