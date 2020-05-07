@@ -3,11 +3,33 @@ import { Text, StyleSheet, View, ImageBackground, Image } from 'react-native';
 import CustomButton from '../../components/button';
 import { Back } from '../../components/icons'
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Modal, { ModalContent, SlideAnimation, ModalTitle, ModalButton }  from 'react-native-modals'
+import CheckBox from '@react-native-community/checkbox';
+import { alignItems } from 'styled-system';
+import ModalFooter from 'react-native-modals/dist/components/ModalFooter';
+import { setData, getData } from '../../utils/functions';
 
 const img1 = 'https://res.cloudinary.com/valkyrja/image/upload/v1587209380/odevler/dilos.jpg'
 const img2 = 'https://res.cloudinary.com/valkyrja/image/upload/v1587209421/odevler/storytel.jpg'
 
 function HomeScreen({ navigation : { navigate } }) {
+  
+  const [ visiblity, hide] = useState(false)
+  const [ checked, check] = useState(true)
+
+  useEffect(()=> {
+        
+    getData('neverShow').then( data => {
+        data === null ? hide(true) : hide(false)
+    })
+
+},[])
+
+  const handleCheckbox = () => {
+    checked && setData('neverShow', true)
+    hide(false)
+  }
+
   return (
     <View>
       <ImageBackground source={require('../../components/icons/dog.jpg')} style={{flexBasis:'40%'}} />
@@ -31,6 +53,44 @@ function HomeScreen({ navigation : { navigate } }) {
           <CustomButton title='Sipariş Ver' style={{alignSelf:'flex-end',px:30,py:12}} />
         </ImageBackground>
       </View>
+
+      <Modal
+          onDismiss={handleCheckbox}
+          onTouchOutside={handleCheckbox}
+          swipeDirection="down"
+          onSwipeOut={handleCheckbox}
+          visible={visiblity}
+          modalTitle={
+            <ModalTitle
+              title="Uyarı"
+              hasTitleBar={false}
+            />
+          }
+          modalAnimation={new SlideAnimation({ slideFrom: 'bottom'})}
+          footer={
+            <ModalFooter>
+              <ModalButton
+                text="Tamam"
+                onPress={handleCheckbox}
+              />
+            </ModalFooter>
+          }
+        >
+          <ModalContent>
+            <Text>
+              Bu uygulama, Bilecik Şeyh Edebali Üniversitesi Yönetim Bilişim Sistemleri Bilişimde Proje Yönetimi dersi ödevi için yapılmıştır ve uygulama içerisindeki verilerin gerçek kişi ve kurumlarla ilgisi yoktur.
+            </Text>
+            <View style={styles.checkBox}>
+              <CheckBox
+                value={checked}
+                disabled={false}
+                onValueChange={() => check(!checked)}
+              />
+              <Text>Bir daha gösterme</Text>
+            </View>
+          </ModalContent>
+        </Modal>
+
     </View>
   )
 }
@@ -51,6 +111,11 @@ const styles = StyleSheet.create({
     flexDirection : 'row',
     justifyContent : 'space-between',
     marginTop : 25
+  },
+  checkBox : {
+    marginTop : 15,
+    flexDirection : 'row',
+    alignItems : 'center'
   }
 })
 

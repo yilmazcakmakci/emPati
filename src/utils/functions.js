@@ -1,9 +1,9 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import { Clipboard } from 'react-native'
 
-export const setData = async (key,user) => {
+export const setData = async (key, data) => {
     try {
-        await AsyncStorage.setItem(key.toString(), JSON.stringify(user))
+        await AsyncStorage.setItem(key.toString(), JSON.stringify(data))
     } 
     catch(e) {
         console.log(e)
