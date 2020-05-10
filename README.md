@@ -1,5 +1,3 @@
-# emPati
-
 ![Demo Gif](emPati.png)
 
 Bu uygulama, Bilişimde Proje Yönetimi dersi için yapılmıştır. Hayvan mamalarının paketlerinde bulunacak QR Code'ları okutarak puan kazanılır ve bu puanlar ile anlaşmalı markalardan alınan kupon kodları satın alınabilir.
